@@ -1,1 +1,2 @@
 # JSAutomationLessons
+New test text
