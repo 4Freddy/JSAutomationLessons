@@ -75,7 +75,14 @@ const persons: Person[] = [
 
 
 // 3. Напишите анотации типов к этому классу.
-export class ObjectManipulator {
+interface IObjectManipulator {
+    set(key: string,value: number) : ObjectManipulator
+    get(key: number) : string
+    delete(key: number) : ObjectManipulator
+    getObject() : {[key: number] :string}
+}
+
+export class ObjectManipulator implements IObjectManipulator {
 
     constructor(protected obj : {[key: number] : string}) {}
 
