@@ -1,9 +1,12 @@
-export class PassangerPlane extends Plane{
+import Plane from "./Plane.js";
+
+export default class PassangerPlane extends Plane{
     #passangersNumber;
 
     constructor(model, flightRange, passangersNumber){
         super(model,flightRange)
-        this.passangersNumber = passangersNumber;
+        this.#passangersNumber = passangersNumber;
+        this.setType("passanger");
     }
 
     getPassangersNumber(){

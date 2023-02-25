@@ -1,17 +1,19 @@
+import Plane from "./Plane.js";
 
-export class CargoPlane extends Plane{
-    #loadCapacity
+export default class CargoPlane extends Plane{
+    #cargoCapacity
 
-    constructor(model, flightRange, loadCapacity){
+    constructor(model, flightRange, cargoCapacity){
         super(model,flightRange)
-        this.#loadCapacity = loadCapacity;
+        this.#cargoCapacity = cargoCapacity;
+        this.setType("cargo");
     }
 
-    getLoadCapacity(){
-        return this.#loadCapacity;
+    getCargoCapacity(){
+        return this.#cargoCapacity;
     }
 
-    setLoadCapacity(loadCapacity){
-        this.#loadCapacity = loadCapacity;
+    setCargoCapacity(cargoCapacity){
+        this.#cargoCapacity = cargoCapacity;
     }
 }

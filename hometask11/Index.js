@@ -1,12 +1,23 @@
-// import { CargoPlane from } from './data/CargoPlane.js';
-// import { PassangerPlane } from './data/PassangerPlane.js';
-import { Airline } from './data/Airline.js';
-//const Airline = require('./data/Airline.js')
-//const CargoPlane = require('./data/CargoPlane.js')
 
-let airli = new Airline;
-airli.addPlane("test");
-airli.addPlane("test2");
-//let plane = new CargoPlane(1, 2, 3, 4);
+import Airline from './data/Airline.js';
+import PlanesFactory from './Builders/PlanesFactory.js';
 
-console.log(airline.getPlanes());
+
+let airline = new Airline();
+let planesFactory = new PlanesFactory();
+airline.addPlane(planesFactory.createPlane("passanger", "Boeing-737", 1000, 300));
+airline.addPlane(planesFactory.createPlane("passanger", "Boeing-747", 1500, 100));
+airline.addPlane(planesFactory.createPlane("passanger", "Boeing-777", 500, 200));
+airline.addPlane(planesFactory.createPlane("cargo", "TU-154", 1250, 5000));
+airline.addPlane(planesFactory.createPlane("cargo", "TU-155", 2000, 7500));
+airline.addPlane(planesFactory.createPlane("cargo", "TU-157", 750, 3000));
+
+airline.getTotalPlanesCapacity();
+console.log(airline.getTotalPlanesCapacity());
+
+airline.sortPlanesByFlightRange();
+airline.printPlanesList();
+
+let serchresult = airline.searchPlane('cargo', null, 1250, null);
+console.log(serchresult);
+

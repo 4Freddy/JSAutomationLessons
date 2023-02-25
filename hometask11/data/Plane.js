@@ -1,10 +1,11 @@
-class Plane {
+export default class Plane {
     #model;
-    #flightRange
-
-    constructor(model, flightRange){
+    #flightRange;
+    #type;
+    constructor(model, flightRange, type){
         this.#model = model;
         this.#flightRange = flightRange;
+        this.#type = type;
     }  
 
     getModel(){
@@ -21,6 +22,13 @@ class Plane {
 
     setFlightRange(flightRange){
         this.#flightRange = flightRange;
+    }
+    getType(){
+        return this.#type;
+    }
+
+    setType(type){
+        this.#type = type;
     }
 }
 
