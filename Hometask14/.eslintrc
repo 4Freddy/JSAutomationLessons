@@ -1,0 +1,18 @@
+{
+    "extends":[
+        "airbnb-base",
+        "plugin:chai-friendly/recommended",
+        "prettier"
+    ],
+    "rules" : {
+        "no-plusplus": "off"
+    },
+    "plugins": [
+        "prettier",
+        "chai-friendly",
+        "import"
+    ],
+    "env": {
+        "mocha": true
+    }
+}
