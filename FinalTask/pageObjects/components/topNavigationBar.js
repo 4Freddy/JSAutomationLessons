@@ -17,9 +17,22 @@ class TopNavigationBar extends BasePage{
         return this.page.locator('#top-user-account .login-button');
     }
 
+    get storeDropdown(){
+        return this.page.locator('#header #store-name');
+    }
+
+    getStoreById(id) {
+        return this.page.locator(`.store-blocks-divider a[href*="S${id}"] div`);
+    }
+
     async logout(){
         await this.accountDropdown.click();
         await this.logoutButton.click();
+    }
+
+    async changeStore(id){
+        await this.storeDropdown.click();
+        await this.getStoreById(id).click();
     }
 
    

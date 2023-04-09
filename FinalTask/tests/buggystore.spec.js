@@ -32,9 +32,14 @@ test.describe('Tests for Buggy store web site', async function(){
         await expect(base.topNavigationBar.loginButton).toBeVisible();
     });
 
-    // test('Should be ".NET" on navigation bar after selecting', async({page})=>{
-        
-    // });
+     test('Should change current store', async({page})=>{
+        await base.mobileAppBanner.closeBanner();
+        await base.welcomePage.Login();
+        await base.topNavigationBar.changeStore('24');
+        await expect(base.topNavigationBar.storeDropdown).toHaveAttribute('title', 'Walmart');
+        await base.topNavigationBar.changeStore('169');
+        await expect(base.topNavigationBar.storeDropdown).toHaveAttribute('title', 'Buggy');
+     });
       
 
 })
