@@ -1,7 +1,10 @@
+const AccountPage = require("./accountPage");
 const BasePage = require("./basePage");
+const ChangePasswordPage = require("./changePasswordPage");
 const MobileAppBanner = require("./components/mobileAppBanner");
 const TopNavigationBar = require("./components/topNavigationBar");
 const MainPage = require("./mainPage");
+const PaymentMethodsPage = require("./paymentMethodsPage");
 const WelcomePage = require("./welcomePage");
 
 class PageFactory {
@@ -12,6 +15,9 @@ class PageFactory {
          this.welcomePage = new WelcomePage(page);
          this.mobileAppBanner = new MobileAppBanner(page);
          this.topNavigationBar = new TopNavigationBar(page);
+         this.accountPage = new AccountPage(page);
+         this.changePasswordPage = new ChangePasswordPage(page);
+         this.paymentMethodsPage = new PaymentMethodsPage(page);
     }
 }
 

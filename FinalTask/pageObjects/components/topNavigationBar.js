@@ -13,6 +13,10 @@ class TopNavigationBar extends BasePage{
         return this.page.locator(".dropdown-menu a[href*='logout']");
     }
 
+    get myAccountButton(){
+        return this.page.locator(".dropdown-menu a[href*='account']");
+    }
+
     get loginButton(){
         return this.page.locator('#top-user-account .login-button');
     }
