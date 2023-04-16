@@ -6,6 +6,7 @@ const TopNavigationBar = require("./components/topNavigationBar");
 const MainPage = require("./mainPage");
 const PaymentMethodsPage = require("./paymentMethodsPage");
 const WelcomePage = require("./welcomePage");
+const SearchResultPage = require("./searchResultPage");
 
 class PageFactory {
     constructor(page){
@@ -18,6 +19,7 @@ class PageFactory {
          this.accountPage = new AccountPage(page);
          this.changePasswordPage = new ChangePasswordPage(page);
          this.paymentMethodsPage = new PaymentMethodsPage(page);
+         this.searchResultPage = new SearchResultPage(page);
     }
 }
 

@@ -63,17 +63,12 @@ test.describe('Tests for Buggy store web site', async () =>{
         await expect(await base.changePasswordPage.succesMessage.textContent()).toContain('Password has been changed.');
      });
 
-     test.skip('Should add product to cart', async({page})=>{
-
-     });
-
-     test.skip('Should remove product from cart', async({page})=>{
-
-     });
-
      test.skip('Should find product by name', async({page})=>{
-
+        await base.welcomePage.login(users.user24);
+        await base.topNavigationBar.findProductByText('Apple');
+        await expect(await base.searchResultPage.getProductByName('Apple')).toBeVisible();  
      });
+
 
      test.skip('Should create an order', async({page})=>{
 
@@ -142,7 +137,7 @@ test.describe.configure({mode: 'serial'});
      });
 });
 
-test.describe('Tests for favourites products', async () =>{
+test.describe.skip('Tests for favourites products', async () =>{
     test.describe.configure({mode: 'serial'});
         let base;
 
@@ -154,16 +149,41 @@ test.describe('Tests for favourites products', async () =>{
         });
 
         test('Should add products to favourites', async({page})=>{
-            await expect(base.mainPage.addToFavouriteButton.first()).toBeVisible();
+            await expect(base.mainPage.addToFavouriteButton.first()).toBeVisible({timeout: 20000});
             await base.mainPage.switchProductsFavourite(await base.mainPage.addToFavouriteButton);
             await expect(await base.mainPage.removeFromFavouriteButton.first()).toBeVisible({timeout: 20000});
             await expect(await base.mainPage.removeFromFavouriteButton).toHaveCount(3);
          });
     
          test('Should remove products from favourites', async({page})=>{
-            await expect(base.mainPage.removeFromFavouriteButton.first()).toBeVisible();
+            await expect(base.mainPage.removeFromFavouriteButton.first()).toBeVisible({timeout: 20000});
             await base.mainPage.switchProductsFavourite(await base.mainPage.removeFromFavouriteButton);
             await expect(await base.mainPage.removeFromFavouriteButton.first()).not.toBeVisible({timeout: 20000});
             await expect(await base.mainPage.removeFromFavouriteButton).toHaveCount(0);
          });
+});
+
+test.describe('Tests for cart', async () =>{
+    test.describe.configure({mode: 'serial'});
+        let base;
+
+        test.beforeEach(async ({page}) =>{
+            base = new PageFactory(page);
+            await base.mainPage.navigate(mainUrl);
+            await base.mobileAppBanner.closeBannerButton.click();
+            await base.welcomePage.login(users.user24);
+        });
+
+        test('Should add product to cart', async({page})=>{
+            await base.mainPage.addToCartButton(1,0).click();
+            await base.topNavigationBar.shoppingCartButton.click();
+            await expect(await base.topNavigationBar.productsInCart).toBeVisible({timeout: 20000});
+        });
+   
+        test('Should remove product from cart', async({page})=>{
+            await base.topNavigationBar.shoppingCartButton.click();
+            await page.on('dialog', dialog => dialog.accept());
+            await base.topNavigationBar.shoppingCartClearButton.click();
+            await expect(await base.topNavigationBar.productsInCart).not.toBeVisible({timeout: 20000});
+        });
 });
