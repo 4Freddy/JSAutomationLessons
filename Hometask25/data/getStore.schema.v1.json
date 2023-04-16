@@ -1,0 +1,1403 @@
+
+
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "shopping_cart_count": {
+        "type": "integer"
+      },
+      "shopping_cart_amount": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "string"
+          },
+          "amount_literal": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "amount",
+          "amount_literal"
+        ]
+      },
+      "user_postal": {
+        "type": "string"
+      },
+      "user_first_name": {
+        "type": "string"
+      },
+      "user_full_name": {
+        "type": "string"
+      },
+      "user_ref_code": {
+        "type": "string"
+      },
+      "affiliate_ref_code": {
+        "type": "string"
+      },
+      "user_has_birthdate": {
+        "type": "boolean"
+      },
+      "user_birthdate_low": {
+        "type": "boolean"
+      },
+      "push_allowed": {
+        "type": "boolean"
+      },
+      "shopping_cart_store_ids_quantity": {
+        "type": "null"
+      },
+      "current_store": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "store_logo": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "opening_hours": {
+            "type": "string"
+          },
+          "store_white_png": {
+            "type": "string"
+          },
+          "next_delivery": {
+            "type": "object",
+            "properties": {
+              "date_literal": {
+                "type": "string"
+              },
+              "date_name": {
+                "type": "string"
+              },
+              "time_text": {
+                "type": "string"
+              },
+              "time_cost": {
+                "type": "string"
+              },
+              "left": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "date_literal",
+              "date_name",
+              "time_text",
+              "time_cost",
+              "left"
+            ]
+          },
+          "is_buggy": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "store_logo",
+          "name",
+          "image",
+          "opening_hours",
+          "store_white_png",
+          "next_delivery",
+          "is_buggy"
+        ]
+      },
+      "success": {
+        "type": "boolean"
+      },
+      "app_ok": {
+        "type": "boolean"
+      },
+      "user_logged_in": {
+        "type": "boolean"
+      },
+      "should_add_address": {
+        "type": "boolean"
+      },
+      "shopping_cart_count_per_store": {
+        "type": "null"
+      },
+      "shopping_cart_amount_per_store": {
+        "type": "null"
+      },
+      "referral_info": {
+        "type": "object",
+        "properties": {
+          "ref_enabled": {
+            "type": "boolean"
+          },
+          "left_amount_to_ref": {
+            "type": "integer"
+          },
+          "ref_order_sum_activation": {
+            "type": "integer"
+          },
+          "ref_referral_sum": {
+            "type": "integer"
+          },
+          "ref_affiliate_sum": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "ref_enabled",
+          "left_amount_to_ref",
+          "ref_order_sum_activation",
+          "ref_referral_sum",
+          "ref_affiliate_sum"
+        ]
+      },
+      "shopping_cart_store_count": {
+        "type": "integer"
+      },
+      "shopping_cart_store_amount": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "string"
+          },
+          "amount_literal": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "amount",
+          "amount_literal"
+        ]
+      },
+      "only_website_title": {
+        "type": "null"
+      },
+      "only_website_message": {
+        "type": "null"
+      },
+      "only_website_button_text": {
+        "type": "null"
+      },
+      "choose_different_store_button_text": {
+        "type": "null"
+      },
+      "store_url": {
+        "type": "string"
+      },
+      "only_website_store": {
+        "type": "boolean"
+      },
+      "store_id": {
+        "type": "integer"
+      },
+      "store_logo": {
+        "type": "string"
+      },
+      "store_name": {
+        "type": "string"
+      },
+      "store_area": {
+        "type": "string"
+      },
+      "opening_hours": {
+        "type": "string"
+      },
+      "image": {
+        "type": "string"
+      },
+      "store_white_png": {
+        "type": "string"
+      },
+      "strore_minimal_order_amount": {
+        "type": "string"
+      },
+      "strore_minimal_order_amount_formatted": {
+        "type": "string"
+      },
+      "departments_count": {
+        "type": "integer"
+      },
+      "departments_list": {
+        "type": "array",
+        "items": [
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "department_id": {
+                "type": "integer"
+              },
+              "department_name": {
+                "type": "string"
+              },
+              "product_list": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "department_id",
+              "department_name",
+              "product_list"
+            ]
+          }
+        ]
+      },
+      "products_list": {
+        "type": "null"
+      },
+      "in_cart_products": {
+        "type": "null"
+      },
+      "require_mature": {
+        "type": "boolean"
+      },
+      "age_low": {
+        "type": "boolean"
+      },
+      "bdate_not_set": {
+        "type": "boolean"
+      },
+      "c_year": {
+        "type": "string"
+      },
+      "show_mode_depts": {
+        "type": "boolean"
+      },
+      "store_has_coupons": {
+        "type": "boolean"
+      },
+      "store_has_recipes": {
+        "type": "boolean"
+      },
+      "store_has_knorr_recipes": {
+        "type": "boolean"
+      },
+      "store_banners": {
+        "type": "null"
+      },
+      "banners": {
+        "type": "boolean"
+      },
+      "banner_no_autoplay": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "shopping_cart_count",
+      "shopping_cart_amount",
+      "user_postal",
+      "user_first_name",
+      "user_full_name",
+      "user_ref_code",
+      "affiliate_ref_code",
+      "user_has_birthdate",
+      "user_birthdate_low",
+      "push_allowed",
+      "shopping_cart_store_ids_quantity",
+      "current_store",
+      "success",
+      "app_ok",
+      "user_logged_in",
+      "should_add_address",
+      "shopping_cart_count_per_store",
+      "shopping_cart_amount_per_store",
+      "referral_info",
+      "shopping_cart_store_count",
+      "shopping_cart_store_amount",
+      "only_website_title",
+      "only_website_message",
+      "only_website_button_text",
+      "choose_different_store_button_text",
+      "store_url",
+      "only_website_store",
+      "store_id",
+      "store_logo",
+      "store_name",
+      "store_area",
+      "opening_hours",
+      "image",
+      "store_white_png",
+      "strore_minimal_order_amount",
+      "strore_minimal_order_amount_formatted",
+      "departments_count",
+      "departments_list",
+      "products_list",
+      "in_cart_products",
+      "require_mature",
+      "age_low",
+      "bdate_not_set",
+      "c_year",
+      "show_mode_depts",
+      "store_has_coupons",
+      "store_has_recipes",
+      "store_has_knorr_recipes",
+      "store_banners",
+      "banners",
+      "banner_no_autoplay"
+    ]
+  }
+  
+  
