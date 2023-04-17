@@ -7,10 +7,10 @@ const mainUrl = 'http://legacy.buggy.ca/';
 
 //todo list:
 //1.add envs for urls
-
-//3.??separate tests by files
-//4.disable parallel run
+//2.set timeout from config
 //5.close banner from cookies 
+//6.add api tests
+//7.??add allure report
 
 
 
@@ -24,22 +24,22 @@ test.describe('Tests for Buggy store web site', async () =>{
         await base.mobileAppBanner.closeBannerButton.click();
     });
 
-    test.skip('Should close mobile app banner', async({page})=>{  
+    test('Should close mobile app banner', async({page})=>{  
         await expect(base.mobileAppBanner.banner).not.toBeVisible();
     });
 
-    test.skip('Should login on website', async ({ page }) => {
+    test('Should login on website', async ({ page }) => {
         await base.welcomePage.login();
         await expect(base.topNavigationBar.accountDropdown).toBeVisible();
       });
       
-    test.skip('Should logout from website', async({page})=>{
+    test('Should logout from website', async({page})=>{
         await base.welcomePage.login();
         await base.topNavigationBar.logout();
         await expect(base.topNavigationBar.loginButton).toBeVisible();
     });
 
-     test.skip('Should change current store', async({page})=>{
+     test('Should change current store', async({page})=>{
         await base.welcomePage.login();
         await base.topNavigationBar.changeStore('24');
         await expect(base.topNavigationBar.storeDropdown).toHaveAttribute('title', 'Walmart');
@@ -47,55 +47,46 @@ test.describe('Tests for Buggy store web site', async () =>{
         await expect(base.topNavigationBar.storeDropdown).toHaveAttribute('title', 'Buggy');
      });
 
-     test.skip('Should a validation message when create account with existing email', async({page})=>{
+     test('Should a validation message when create account with existing email', async({page})=>{
         await base.welcomePage.openRegistrationForm();
         await base.welcomePage.fillRegistrationForm();
         await base.welcomePage.signUpButton.click();
         await expect(base.welcomePage.validationMessage).toBeVisible();
      });
 
-     test.skip('Should change a password', async({page})=>{
+     test('Should change a password', async({page})=>{
         await base.welcomePage.login();
         await base.topNavigationBar.accountDropdown.click();
         await base.topNavigationBar.myAccountButton.click();
         await base.accountPage.changePasswordButton.click();
         await base.changePasswordPage.changePassword(users.user1.password);
-        await expect(await base.changePasswordPage.succesMessage.textContent()).toContain('Password has been changed.');
+        await expect(await base.notificationBar.succesMessage.textContent()).toContain('Password has been changed.');
      });
 
-     test.skip('Should find product by name', async({page})=>{
+     test('Should find product by name', async({page})=>{
         await base.welcomePage.login(users.user24);
         await base.topNavigationBar.findProductByText('Apple');
         await expect(await base.searchResultPage.getProductByName('Apple')).toBeVisible();  
      });
 
+     test('Should open order history', async({page})=>{
+        await base.welcomePage.login();
+        await base.topNavigationBar.accountDropdown.click();
+        await base.topNavigationBar.orderHistoryButton.click();
+        await expect(page).toHaveURL(/.*history/);
+    });
 
-     test.skip('Should create an order', async({page})=>{
 
-     });
-
-     test.skip('Should modife order comment', async({page})=>{
-
-     });
-
-     test.skip('Should cancel an order', async({page})=>{
-
-     });
-
-     test.skip('Should open order history', async({page})=>{
-
-     });
-
-     test.skip('Should reorder existing order', async({page})=>{
-
-     });
-
-     test.skip('Should switch language', async({page})=>{
-
+     test('Should switch language', async({page})=>{
+        await base.welcomePage.login(users.user19);
+        await base.topNavigationBar.switchLanguage();
+        await expect(page).toHaveURL(/.*fr/);
+        await base.topNavigationBar.switchLanguage();
+        await expect(page).not.toHaveURL(/.*fr/);
      });
 });
 
-test.describe.skip('Tests for payment methods', async () =>{
+test.describe('Tests for payment methods', async () =>{
 test.describe.configure({mode: 'serial'});
     let base;
 
@@ -137,7 +128,7 @@ test.describe.configure({mode: 'serial'});
      });
 });
 
-test.describe.skip('Tests for favourites products', async () =>{
+test.describe('Tests for favourites products', async () =>{
     test.describe.configure({mode: 'serial'});
         let base;
 
@@ -187,3 +178,57 @@ test.describe('Tests for cart', async () =>{
             await expect(await base.topNavigationBar.productsInCart).not.toBeVisible({timeout: 20000});
         });
 });
+
+test.describe('Tests for order', async () =>{
+    test.describe.configure({mode: 'serial'});
+        let base;
+
+        test.beforeEach(async ({page}) =>{
+            base = new PageFactory(page);
+            await base.mainPage.navigate(mainUrl);
+            await base.mobileAppBanner.closeBannerButton.click();
+            await base.welcomePage.login(users.user20);
+        });
+
+        test('Should create an order', async({page})=>{
+            await base.mainPage.addToCartButton(1,0).click();
+            await base.mainPage.addToCartButton(2,0).click();
+            await base.topNavigationBar.shoppingCartButton.click();
+            await base.topNavigationBar.checkoutNowButton.click();
+            await base.checkoutPage.fillDeliveryForm();
+            await base.checkoutPage.nextButton.click();
+            await base.checkoutPage.palceOrderButton.click();
+            await expect(page).toHaveURL(/.*success/);
+        });
+   
+        test('Should modife order comment', async({page})=>{
+            await base.topNavigationBar.accountDropdown.click();
+            await base.topNavigationBar.orderHistoryButton.click();
+            await base.orderHistoryPage.viewOrderButton(0).click();
+            await base.orderHistoryPage.editCommentButton.click();
+            await base.modifyOrderPage.commentField.fill('test text comment');
+            await base.modifyOrderPage.saveButton.click();
+            await expect(await base.notificationBar.succesMessage.textContent()).toContain('Order Comment Updated');
+        });
+   
+        test('Should cancel an order', async({page})=>{
+            await base.topNavigationBar.accountDropdown.click();
+            await base.topNavigationBar.orderHistoryButton.click();
+            await base.orderHistoryPage.viewOrderButton(0).click();
+            await base.orderHistoryPage.cancelOrderButton.click();
+            await base.modifyOrderPage.cancelOrderButton.click();
+            await expect(await base.notificationBar.succesMessage.textContent()).toContain('was canceled');
+        });
+   
+        test('Should add tips for finished order', async({page})=>{
+            await base.topNavigationBar.accountDropdown.click();
+            await base.topNavigationBar.orderHistoryButton.click();
+            await base.orderHistoryPage.viewOrderButton(0).click();
+            await base.orderHistoryPage.adjustTipButton.click();
+            await base.modifyOrderPage.setTipValue(3).click();
+            await base.modifyOrderPage.saveButton.click();
+            await expect(await base.notificationBar.succesMessage.textContent()).toContain('Tip added!');
+        });
+});
+
+

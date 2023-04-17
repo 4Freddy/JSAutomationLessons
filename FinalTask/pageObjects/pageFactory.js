@@ -7,6 +7,10 @@ const MainPage = require("./mainPage");
 const PaymentMethodsPage = require("./paymentMethodsPage");
 const WelcomePage = require("./welcomePage");
 const SearchResultPage = require("./searchResultPage");
+const CheckoutPage = require("./checkoutPage");
+const OrderHistoryPage = require("./orderHistoryPage");
+const NotificationBar = require("./components/notificationBar");
+const ModifyOrderPage = require("./modifyOrderPage");
 
 class PageFactory {
     constructor(page){
@@ -20,6 +24,10 @@ class PageFactory {
          this.changePasswordPage = new ChangePasswordPage(page);
          this.paymentMethodsPage = new PaymentMethodsPage(page);
          this.searchResultPage = new SearchResultPage(page);
+         this.checkoutPage = new CheckoutPage(page);
+         this.orderHistoryPage = new OrderHistoryPage(page);
+         this.notificationBar = new NotificationBar(page);
+         this.modifyOrderPage = new ModifyOrderPage(page);
     }
 }
 

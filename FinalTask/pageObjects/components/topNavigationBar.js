@@ -17,6 +17,10 @@ class TopNavigationBar extends BasePage{
         return this.page.locator(".dropdown-menu a[href*='account']");
     }
 
+    get orderHistoryButton(){
+        return this.page.locator(".dropdown-menu a[href*='history']");
+    }
+
     get loginButton(){
         return this.page.locator('#top-user-account .login-button');
     }
@@ -43,6 +47,29 @@ class TopNavigationBar extends BasePage{
 
     get productsInCart(){
         return this.page.locator('.cart-product');
+    }
+
+    get checkoutNowButton(){
+        return this.page.locator('#checkout-now-button');
+    }
+
+    get translateMenuButton(){
+        return this.page.locator('img.translate-button');
+    }
+
+    get closeTranslateMenuButton(){
+        return this.page.locator('#language-switcher .icon-close-thin');
+    }
+
+    get switchLangButton(){
+        return this.page.locator('#language_form a');
+    }
+
+    async switchLanguage(){
+        await this.translateMenuButton.click();
+        await this.closeTranslateMenuButton.click();
+        await this.translateMenuButton.click();
+        await this.switchLangButton.click(); 
     }
 
     async logout(){
