@@ -1,0 +1,199 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "shopping_cart_count": {
+        "type": "integer"
+      },
+      "shopping_cart_amount": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "string"
+          },
+          "amount_literal": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "amount",
+          "amount_literal"
+        ]
+      },
+      "user_postal": {
+        "type": "string"
+      },
+      "user_first_name": {
+        "type": "string"
+      },
+      "user_full_name": {
+        "type": "string"
+      },
+      "user_ref_code": {
+        "type": "string"
+      },
+      "affiliate_ref_code": {
+        "type": "string"
+      },
+      "user_has_birthdate": {
+        "type": "boolean"
+      },
+      "user_birthdate_low": {
+        "type": "boolean"
+      },
+      "push_allowed": {
+        "type": "boolean"
+      },
+      "shopping_cart_store_ids_quantity": {
+        "type": "null"
+      },
+      "current_store": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "is_buggy": {
+            "type": "boolean"
+          },
+          "image": {
+            "type": "string"
+          },
+          "store_white_png": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "is_buggy",
+          "image",
+          "store_white_png"
+        ]
+      },
+      "success": {
+        "type": "boolean"
+      },
+      "app_ok": {
+        "type": "boolean"
+      },
+      "user_logged_in": {
+        "type": "boolean"
+      },
+      "should_add_address": {
+        "type": "boolean"
+      },
+      "shopping_cart_count_per_store": {
+        "type": "null"
+      },
+      "shopping_cart_amount_per_store": {
+        "type": "null"
+      },
+      "referral_info": {
+        "type": "object",
+        "properties": {
+          "ref_enabled": {
+            "type": "boolean"
+          },
+          "left_amount_to_ref": {
+            "type": "integer"
+          },
+          "ref_order_sum_activation": {
+            "type": "integer"
+          },
+          "ref_referral_sum": {
+            "type": "integer"
+          },
+          "ref_affiliate_sum": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "ref_enabled",
+          "left_amount_to_ref",
+          "ref_order_sum_activation",
+          "ref_referral_sum",
+          "ref_affiliate_sum"
+        ]
+      },
+      "shopping_cart_store_count": {
+        "type": "integer"
+      },
+      "shopping_cart_store_amount": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "string"
+          },
+          "amount_literal": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "amount",
+          "amount_literal"
+        ]
+      },
+      "user_key": {
+        "type": "string"
+      },
+      "store_list": {
+        "type": "array",
+        "items": [
+          {
+            "type": "object",
+            "properties": {
+              "store_id": {
+                "type": "string"
+              },
+              "store_name": {
+                "type": "string"
+              },
+              "store_logo": {
+                "type": "string"
+              },
+              "store_green_png": {
+                "type": "string"
+              },
+              "store_white_png": {
+                "type": "string"
+              },
+              "store_area": {
+                "type": "string"
+              },
+              "opening_hours": {
+                "type": "string"
+              },
+              "has_coupons": {
+                "type": "string"
+              },
+              "is_buggy": {
+                "type": "boolean"
+              },
+              "has_standard_delivery": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "store_id",
+              "store_name",
+              "store_logo",
+              "store_green_png",
+              "store_white_png",
+              "store_area",
+              "opening_hours",
+              "has_coupons",
+              "is_buggy",
+              "has_standard_delivery"
+            ]
+          }
+        ]
+      },
+      "stores_available_by_zip": {
+        "type": "boolean"
+      }
+    }
+  }

@@ -1,9 +1,17 @@
+const { getUrlByEnv } = require('../helpers/urls')
+
 class BasePage {
     constructor(page){
         this.page = page;
     }
 
-    async navigate(url){
+    get baseUrl(){
+        return 'http://legacy.buggy.ca/';
+    }
+
+    async navigate(){
+        let url = await getUrlByEnv();
+        url = url ? url : this.baseUrl;
         await this.page.goto(url);
     }
     async clickOnPseudoElement(locator){
