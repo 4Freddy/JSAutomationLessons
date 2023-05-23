@@ -1,0 +1,91 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "app_ok": {
+        "type": "boolean"
+      },
+      "shopping_cart_count": {
+        "type": "integer"
+      },
+      "shopping_cart_amount": {
+        "type": "integer"
+      },
+      "user_postal": {
+        "type": "boolean"
+      },
+      "user_logged_in": {
+        "type": "boolean"
+      },
+      "user_first_name": {
+        "type": "string"
+      },
+      "user_full_name": {
+        "type": "string"
+      },
+      "push_allowed": {
+        "type": "boolean"
+      },
+      "current_store": {
+        "type": "null"
+      },
+      "shopping_cart_store_ids_quantity": {
+        "type": "array",
+        "items": {}
+      },
+      "user_has_birthdate": {
+        "type": "boolean"
+      },
+      "user_birthdate_low": {
+        "type": "boolean"
+      },
+      "should_add_address": {
+        "type": "boolean"
+      },
+      "shopping_cart_count_per_store": {
+        "type": "null"
+      },
+      "shopping_cart_amount_per_store": {
+        "type": "null"
+      },
+      "referral_info": {
+        "type": "object",
+        "properties": {
+          "ref_enabled": {
+            "type": "boolean"
+          },
+          "left_amount_to_ref": {
+            "type": "integer"
+          },
+          "ref_order_sum_activation": {
+            "type": "integer"
+          },
+          "ref_referral_sum": {
+            "type": "integer"
+          },
+          "ref_affiliate_sum": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "ref_enabled",
+          "left_amount_to_ref",
+          "ref_order_sum_activation",
+          "ref_referral_sum",
+          "ref_affiliate_sum"
+        ]
+      },
+      "available": {
+        "type": "integer"
+      },
+      "city_name": {
+        "type": "string"
+      },
+      "zip_code": {
+        "type": "string"
+      }
+    }
+  }
